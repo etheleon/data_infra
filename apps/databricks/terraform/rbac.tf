@@ -1,7 +1,7 @@
 resource "azurerm_user_assigned_identity" "databricks_identity" {
   name                = "databricks-identity"
-  resource_group_name = azurerm_resource_group.storage_rg.name
-  location            = azurerm_resource_group.storage_rg.location
+  resource_group_name = azurerm_resource_group.this.name
+  location            = azurerm_resource_group.this.location
 }
 
 resource "azurerm_role_assignment" "blob_data_contributor" {
