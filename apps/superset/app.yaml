@@ -29,6 +29,9 @@ spec:
             enabled: true
             existingSecret: superset-db-secret  # Secret containing Redis credentials
             existingSecretKey: redis-password  # The key in the secret for Redis password
+        configOverrides:
+          enable_feature: |
+              ENABLE_TEMPLATE_PROCESSING = True
   syncPolicy:
     automated:
       prune: true
